@@ -1,0 +1,23 @@
+version: '3'
+
+
+networks:
+    laravel:
+
+services:
+    jenkins:
+       build:
+         context: .
+         dockerfile: Dockerfile
+       container_name: jenkin_maven_docker
+       ports:
+         - "8088:8080"
+       volumes:
+         - ./src:/var/jenkins_home
+       networks:
+         - laravel
+
+  
+      
+
+    
